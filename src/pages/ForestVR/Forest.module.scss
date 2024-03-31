@@ -1,4 +1,24 @@
+@use "../../_themes.module.scss" as themes;
+
 .container {
   height: 100vh;
   width: 100vw;
+}
+
+.home {
+  position: absolute;
+  z-index: 100;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: themes.$primary-color;
+  color: themes.$font-color;
+  font-family: themes.$font-family;
+  transition: ease color 200ms, ease background-color 250ms;
+  &:hover {
+    cursor: pointer;
+    background-color: darken(themes.$primary-color, 10%);
+  }
 }

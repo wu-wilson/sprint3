@@ -16,7 +16,7 @@ const App = () => {
       ) : page === "Guided Breathing" ? (
         <GuidedBreathing />
       ) : page === "Forest VR" ? (
-        <ForestVR numTrees={175} numClouds={10} />
+        <ForestVR numTrees={175} numClouds={10} setPage={setPage} />
       ) : null}
     </div>
   );
