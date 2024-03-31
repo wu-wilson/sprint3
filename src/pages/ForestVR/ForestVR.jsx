@@ -4,7 +4,6 @@ import { Color, MathUtils } from "three";
 import { Tree } from "../../components/Tree/tree";
 import { Cloud } from "@react-three/drei";
 import { Grass } from "../../components/Grass/grass";
-import Loading from "../Loading/Loading";
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import styles from "./Forest.module.scss";
 
