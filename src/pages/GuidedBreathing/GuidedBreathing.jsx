@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Cube } from "../../components/Cube/cube";
+import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import Slider from "../../components/Slider/Slider";
 import styles from "./GuidedBreathing.module.scss";
 
@@ -15,6 +16,7 @@ const GuidedBreathing = ({ setPage }) => {
       <button onClick={() => setPage("Home")} className={styles["home"]}>
         ◄ Home
       </button>
+      <AudioPlayer audioPath="/sounds/breathing_music.mp3" />
       <Canvas>
         <Cube ref={factor} />
         <ambientLight intensity={0.6} />
