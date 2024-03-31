@@ -4,12 +4,22 @@ import themes from "../../_themes.module.scss";
 
 export const Cube = forwardRef((props, factor) => {
   const meshRef = useRef();
+  const incrementing = useRef(true);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     meshRef.current.rotation.x += delta;
     meshRef.current.rotation.y += delta;
-    meshRef.current.position.z =
-      Math.sin(state.clock.elapsedTime * factor.current) * 3;
+    if (incrementing.current) {
+      meshRef.current.position.z += 0.01 * factor.current;
+      if (meshRef.current.position.z >= 3) {
+        incrementing.current = false;
+      }
+    } else {
+      meshRef.current.position.z -= 0.01 * factor.current;
+      if (meshRef.current.position.z <= -2) {
+        incrementing.current = true;
+      }
+    }
   });
 
   return (
