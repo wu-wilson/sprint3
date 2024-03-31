@@ -20,6 +20,7 @@ const Home = ({ setPage }) => {
             Guided Breathing
           </button>
           <button onClick={() => setPage("Forest VR")}>Forest VR</button>
+          <button onClick={() => setPage("Ocean VR")}>Ocean VR</button>
         </div>
       ) : null}
     </div>
