@@ -5,6 +5,8 @@ import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import styles from "./Ocean.module.scss";
 import { VRButton, XR } from "@react-three/xr";
+import WebXRPolyfill from "webxr-polyfill";
+const polyfill = new WebXRPolyfill();
 
 const OceanVR = ({ setPage }) => {
   return (

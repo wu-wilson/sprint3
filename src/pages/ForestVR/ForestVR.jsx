@@ -7,6 +7,8 @@ import { Grass } from "../../components/Grass/grass";
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import styles from "./Forest.module.scss";
 import { VRButton, XR } from "@react-three/xr";
+import WebXRPolyfill from "webxr-polyfill";
+const polyfill = new WebXRPolyfill();
 
 const ForestVR = ({ numTrees, numClouds, setPage }) => {
   // Generate a random position within a range

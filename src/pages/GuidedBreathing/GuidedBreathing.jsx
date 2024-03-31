@@ -5,6 +5,8 @@ import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import Slider from "../../components/Slider/Slider";
 import styles from "./GuidedBreathing.module.scss";
 import { VRButton, XR } from "@react-three/xr";
+import WebXRPolyfill from "webxr-polyfill";
+const polyfill = new WebXRPolyfill();
 
 const GuidedBreathing = ({ setPage }) => {
   const factor = useRef(0.7);
