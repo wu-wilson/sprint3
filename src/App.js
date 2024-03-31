@@ -9,11 +9,16 @@ const pages = ["Home", "Guided Breathing", "Forest VR", "Ocean VR"];
 
 const App = () => {
   const [page, setPage] = useState(pages[0]);
+  const [animationDone, setAnimationDone] = useState(false);
 
   return (
     <div className={styles["App"]}>
       {page === "Home" ? (
-        <Home setPage={setPage} />
+        <Home
+          setPage={setPage}
+          animationDone={animationDone}
+          setAnimationDone={setAnimationDone}
+        />
       ) : page === "Guided Breathing" ? (
         <GuidedBreathing setPage={setPage} />
       ) : page === "Forest VR" ? (
