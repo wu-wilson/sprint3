@@ -1,0 +1,26 @@
+@use "../../_themes.module.scss" as themes;
+
+.container {
+  display: flex;
+  align-items: center;
+  white-space: pre;
+  color: themes.$font-color;
+}
+
+.cursor {
+  width: 0.4rem;
+  height: 1.3rem;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    background: transparent;
+  }
+  50% {
+    background: themes.$font-color;
+  }
+  100% {
+    background: transparent;
+  }
+}

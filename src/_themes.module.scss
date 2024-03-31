@@ -1,0 +1,13 @@
+// Vars
+$primary-color: #89a4c7;
+$page-bg: rgb(25, 25, 29);
+$font-family: Poppins;
+$font-color: white;
+
+// Var exports
+:export {
+  primary_color: $primary-color;
+  page_bg: $page-bg;
+  font_family: $font-family;
+  font_color: $font-color;
+}
