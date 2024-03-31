@@ -14,9 +14,9 @@ const App = () => {
       {page === "Home" ? (
         <Home setPage={setPage} />
       ) : page === "Guided Breathing" ? (
-        <GuidedBreathing />
+        <GuidedBreathing setPage={setPage} />
       ) : page === "Forest VR" ? (
-        <ForestVR numTrees={175} numClouds={10} setPage={setPage} />
+        <ForestVR numTrees={150} numClouds={10} setPage={setPage} />
       ) : null}
     </div>
   );
