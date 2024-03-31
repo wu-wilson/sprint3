@@ -24,7 +24,7 @@
     color: themes.$font-color;
     font-family: themes.$font-family;
     transition: ease color 200ms, ease background-color 250ms;
-    animation: fadeIn 1000ms forwards;
+    animation: fadeIn 300ms forwards;
     &:hover {
       cursor: pointer;
       background-color: darken(themes.$primary-color, 10%);
