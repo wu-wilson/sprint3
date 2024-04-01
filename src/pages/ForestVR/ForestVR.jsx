@@ -1,13 +1,20 @@
 import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import {
+  PerspectiveCamera,
+  OrbitControls,
+  DeviceOrientationControls,
+} from "@react-three/drei";
 import { Color, MathUtils } from "three";
 import { Tree } from "../../components/Tree/tree";
 import { Cloud } from "@react-three/drei";
 import { Grass } from "../../components/Grass/grass";
+import { useState } from "react";
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import styles from "./Forest.module.scss";
 
 const ForestVR = ({ numTrees, numClouds, setPage }) => {
+  const [isOrbit, setIsOrbit] = useState(true);
+
   // Generate a random position within a range
   const randomPosition = (min, max, y) => {
     return [MathUtils.randFloat(min, max), y, MathUtils.randFloat(min, max)];
@@ -15,9 +22,12 @@ const ForestVR = ({ numTrees, numClouds, setPage }) => {
 
   return (
     <div className={styles["container"]}>
-      <button onClick={() => setPage("Home")} className={styles["home"]}>
-        ◄ Home
-      </button>
+      <div className={styles["buttons"]}>
+        <button onClick={() => setPage("Home")}>◄ Home</button>
+        <button onClick={() => setIsOrbit(!isOrbit)}>
+          Switch to {isOrbit ? "Orientation" : "Orbit"}
+        </button>
+      </div>
       <AudioPlayer audioPath="/sounds/forest.mp3" />
       <Canvas shadows>
         {Array.from({ length: numTrees }).map((_, index) => (
@@ -63,7 +73,11 @@ const ForestVR = ({ numTrees, numClouds, setPage }) => {
           near={0.1}
           position={[0, 3, 6]}
         />
-        <OrbitControls />
+        {isOrbit ? (
+          <OrbitControls makeDefault />
+        ) : (
+          <DeviceOrientationControls makeDefault />
+        )}
       </Canvas>
     </div>
   );
