@@ -51,7 +51,11 @@ const OceanVR = ({ setPage }) => {
           near={0.1}
           position={[0, 20, 36]}
         />
-        {isOrbit ? <OrbitControls /> : <DeviceOrientationControls />}
+        {isOrbit ? (
+          <OrbitControls makeDefault />
+        ) : (
+          <DeviceOrientationControls makeDefault />
+        )}
       </Canvas>
     </div>
   );
