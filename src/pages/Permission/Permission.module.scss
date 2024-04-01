@@ -1,0 +1,52 @@
+@use "../../_themes.module.scss" as themes;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: themes.$page-bg;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: themes.$font-family;
+  color: themes.$font-color;
+  button {
+    margin-top: 1rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: themes.$primary-color;
+    color: themes.$font-color;
+    font-family: themes.$font-family;
+    transition: ease color 200ms, ease background-color 250ms;
+    animation: fadeIn 500ms forwards;
+    &:hover {
+      cursor: pointer;
+      background-color: darken(themes.$primary-color, 10%);
+    }
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.emoji {
+  position: absolute;
+  right: 105%;
+}
+
+.subtitle {
+  font-size: 1rem;
+  max-width: 38rem;
+  display: flex;
+  text-align: center;
+  margin-bottom: 1rem;
+}

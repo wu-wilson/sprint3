@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import styles from "./Permission.module.scss";
 
 const Permission = ({ permissionGranted, setPermissionGranted }) => {
   useEffect(() => {
@@ -30,9 +31,17 @@ const Permission = ({ permissionGranted, setPermissionGranted }) => {
   return (
     <>
       {permissionGranted ? null : (
-        <div>
-          Test
-          <button onClick={handlePermissionGranted}>Grant Permission</button>
+        <div className={styles["container"]}>
+          <div className={styles["content"]}>
+            <span className={styles["title"]}>
+              <span className={styles["emoji"]}>👋</span> Hey there!
+            </span>
+            <span className={styles["subtitle"]}>
+              This website needs access to some of your device's motion sensors
+              to run. Could we have your permission to use them?
+            </span>
+            <button onClick={handlePermissionGranted}>Grant Permission</button>
+          </div>
         </div>
       )}
     </>
