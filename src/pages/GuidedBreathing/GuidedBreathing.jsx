@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Cube } from "../../components/Cube/cube";
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import Slider from "../../components/Slider/Slider";

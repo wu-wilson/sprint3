@@ -1,16 +1,26 @@
 import { Canvas } from "@react-three/fiber";
 import { Ocean } from "../../components/Ocean/ocean";
 import { Island } from "../../components/Island/island";
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import {
+  PerspectiveCamera,
+  OrbitControls,
+  DeviceOrientationControls,
+} from "@react-three/drei";
+import { useState } from "react";
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer";
 import styles from "./Ocean.module.scss";
 
 const OceanVR = ({ setPage }) => {
+  const [isOrbit, setIsOrbit] = useState(true);
+
   return (
     <div className={styles["container"]}>
-      <button onClick={() => setPage("Home")} className={styles["home"]}>
-        ◄ Home
-      </button>
+      <div className={styles["buttons"]}>
+        <button onClick={() => setPage("Home")}>◄ Home</button>
+        <button onClick={() => setIsOrbit(!isOrbit)}>
+          Switch to {isOrbit ? "Orientation" : "Orbit"}
+        </button>
+      </div>
       <AudioPlayer audioPath="/sounds/ocean.mp3" />
       <Canvas>
         <Ocean />
@@ -41,7 +51,7 @@ const OceanVR = ({ setPage }) => {
           near={0.1}
           position={[0, 20, 36]}
         />
-        <OrbitControls />
+        {isOrbit ? <OrbitControls /> : <DeviceOrientationControls />}
       </Canvas>
     </div>
   );
