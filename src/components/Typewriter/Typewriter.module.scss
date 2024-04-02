@@ -4,14 +4,12 @@
   display: flex;
   align-items: center;
   white-space: pre;
-  color: black;
-  font-family: themes.$font-family;
-  font-size: 1.5rem;
+  color: themes.$font-color;
 }
 
 .cursor {
   width: 0.4rem;
-  height: 1.6rem;
+  height: 1.3rem;
   animation: blink 1s infinite;
 }
 
@@ -20,7 +18,7 @@
     background: transparent;
   }
   50% {
-    background: black;
+    background: themes.$font-color;
   }
   100% {
     background: transparent;
