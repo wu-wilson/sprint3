@@ -8,7 +8,7 @@ const Home = ({ setPage, animationDone, setAnimationDone }) => {
   const buttonsContainer = useRef(null);
 
   const enableButtons = () => {
-    if (buttonsContainer) {
+    if (buttonsContainer && buttonsContainer.current) {
       const buttons = buttonsContainer.current.querySelectorAll("button");
       buttons.forEach((button) => {
         button.disabled = false;
@@ -32,11 +32,14 @@ const Home = ({ setPage, animationDone, setAnimationDone }) => {
   }, []);
 
   return (
-    <div className={styles["container"]}>
+    <div className={styles['outer-container']}>
+    <video autoPlay muted loop className={styles["backgroundVideo"]}>
+        <source src="/videos/Home.mov" type="video/mp4" />
+      </video>
       <div className={styles["typewriter"]}>
         {animationDone ? (
           <div className={styles["title"]}>
-            <span>Welcome to Meditation VR.</span>
+            <span >Welcome to Meditation VR.</span>
             <span className={styles["cursor"]} />
           </div>
         ) : (
@@ -47,6 +50,7 @@ const Home = ({ setPage, animationDone, setAnimationDone }) => {
           />
         )}
       </div>
+    <div className={styles["container"]} >
       {animationDone ? (
         <div className={styles["buttons"]}>
           <button
@@ -84,6 +88,7 @@ const Home = ({ setPage, animationDone, setAnimationDone }) => {
           </button>
         </div>
       ) : null}
+    </div>
     </div>
   );
 };
