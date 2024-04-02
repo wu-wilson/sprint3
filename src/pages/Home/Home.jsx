@@ -36,12 +36,12 @@ const Home = ({ setPage, animationDone, setAnimationDone }) => {
       <div className={styles["typewriter"]}>
         {animationDone ? (
           <div className={styles["title"]}>
-            <span>Welcome to Meditation VR.</span>
+            <span>Welcome to E-scape.</span>
             <span className={styles["cursor"]} />
           </div>
         ) : (
           <Typewriter
-            text={"Welcome to Meditation VR."}
+            text={"Welcome to E-scape."}
             initialDelay={80}
             onFinish={() => setShowButtons(true)}
           />
